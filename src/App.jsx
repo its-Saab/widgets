@@ -28,7 +28,7 @@ const options = [
 export default () => {
 	const [selectedColor, setSelectedColor] = useState(options[0]);
 	return (
-		<div>
+		<div className="ui container">
 			{/* <Accordion items={items} /> */}
 			{/* <Search /> */}
 			<DropDown
