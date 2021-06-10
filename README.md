@@ -10,6 +10,7 @@ __3-DropDown widget:__ A drop down menu that let the user choose a displayed tex
 
 In the project directory, you can run:
 
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
