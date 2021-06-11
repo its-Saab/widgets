@@ -4,6 +4,7 @@ import { useState } from "react";
 import Accordion from "./components/Accordion";
 import DropDown from "./components/DropDown";
 import Search from "./components/Search";
+import Translate from "./components/Translate";
 
 const items = [
 	{
@@ -31,11 +32,14 @@ export default () => {
 		<div className="ui container">
 			{/* <Accordion items={items} /> */}
 			{/* <Search /> */}
-			<DropDown
+			{/* <DropDown
 				selected={selectedColor}
 				options={options}
 				onSelectedChange={(color) => setSelectedColor(color)}
-			/>
+				label="Select A Color"
+				message={`THIS TEXT IS ${selectedColor.toUpperCase()}`}
+			/> */}
+			<Translate />
 		</div>
 	);
 };

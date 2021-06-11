@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 //project files
 
-const DropDown = ({ selected, options, onSelectedChange }) => {
+const DropDown = ({ selected, options, onSelectedChange, label, message }) => {
 	const [openMenu, setOpenMenu] = useState(false);
 	const ref = useRef();
 
@@ -42,7 +42,7 @@ const DropDown = ({ selected, options, onSelectedChange }) => {
 		<div>
 			<div ref={ref} className="ui form">
 				<div className="field">
-					<label className="label">Select a color</label>
+					<label className="label">{label}</label>
 					<div
 						onClick={() => setOpenMenu(!openMenu)}
 						className={`ui selection dropdown ${
@@ -57,9 +57,7 @@ const DropDown = ({ selected, options, onSelectedChange }) => {
 					</div>
 				</div>
 			</div>
-			<p style={{ color: `${selected.value}` }}>
-				{`THIS TEXT IS ${selected.value.toUpperCase()}`}{" "}
-			</p>
+			<p style={{ color: `${selected.value}` }}>{message}</p>
 		</div>
 	);
 };
