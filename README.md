@@ -3,7 +3,9 @@ __1-Accordion widget:__ Shows a list of questions and answers.
 
 __2-Search widget:__ Uses wikipedia's Api to search and render results.
 
-__3-DropDown widget:__ A drop down menu that let the user choose a displayed text's color
+__3-DropDown widget:__ A drop down menu that let the user choose a displayed text's color.
+
+__3-Translate widget:__ Uses Google translate Api to translate user's input.
 
 
 ## Available Scripts
