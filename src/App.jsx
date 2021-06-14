@@ -3,6 +3,8 @@ import { useState } from "react";
 //project files
 import Accordion from "./components/Accordion";
 import DropDown from "./components/DropDown";
+import { Header } from "./components/Header";
+import Route from "./components/Route";
 import Search from "./components/Search";
 import Translate from "./components/Translate";
 
@@ -30,16 +32,25 @@ export default () => {
 	const [selectedColor, setSelectedColor] = useState(options[0]);
 	return (
 		<div className="ui container">
-			{/* <Accordion items={items} /> */}
-			{/* <Search /> */}
-			{/* <DropDown
-				selected={selectedColor}
-				options={options}
-				onSelectedChange={(color) => setSelectedColor(color)}
-				label="Select A Color"
-				message={`THIS TEXT IS ${selectedColor.toUpperCase()}`}
-			/> */}
-			<Translate />
+			<Header />
+			<Route path="/">
+				<Accordion items={items} />
+			</Route>
+			<Route path="/search">
+				<Search />
+			</Route>
+			<Route path="/dropdown">
+				<DropDown
+					selected={selectedColor}
+					options={options}
+					onSelectedChange={(color) => setSelectedColor(color)}
+					label="Select A Color"
+					message={`THIS TEXT IS ${selectedColor.value.toUpperCase()}`}
+				/>
+			</Route>
+			<Route path="/translate">
+				<Translate />
+			</Route>
 		</div>
 	);
 };
