@@ -20,27 +20,29 @@ const Convert = ({ language, text }) => {
 	}, [text]);
 
 	useEffect(() => {
-		getTranslatedText(debouncedText);
-	}, [language, debouncedText]);
 
-	const getTranslatedText = async (toTranslateText) => {
-		const {
-			data: {
-				data: { translations },
-			},
-		} = await axios.post(
-			"https://translation.googleapis.com/language/translate/v2",
-			{},
-			{
-				params: {
-					q: toTranslateText,
-					target: language.value,
-					key: process.env.REACT_APP_GOOGLE_API_KEY,
+		const getTranslatedText = async (toTranslateText) => {
+			const {
+				data: {
+					data: { translations },
 				},
-			}
-		);
-		setTranslatedText(translations[0].translatedText);
-	};
+			} = await axios.post(
+				"https://translation.googleapis.com/language/translate/v2",
+				{},
+				{
+					params: {
+						q: toTranslateText,
+						target: language.value,
+						key: process.env.REACT_APP_GOOGLE_API_KEY,
+					},
+				}
+			);
+			setTranslatedText(translations[0].translatedText);
+		};
+
+		getTranslatedText(debouncedText);
+
+	}, [language, debouncedText]);
 
 	return (
 		<div>

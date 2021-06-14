@@ -28,7 +28,7 @@ const options = [
 	{ label: "The Color Green", value: "green" },
 	{ label: "A Shade of Blue", value: "blue" },
 ];
-export default () => {
+const App = () => {
 	const [selectedColor, setSelectedColor] = useState(options[0]);
 	return (
 		<div className="ui container">
@@ -54,3 +54,5 @@ export default () => {
 		</div>
 	);
 };
+
+export default App;
